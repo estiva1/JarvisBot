@@ -124,6 +124,13 @@
           ],
           "elseActions": [
             {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "pHWTfd"
+              },
+              "property": "user.confirmed"
+            },
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
                 "id": "VMjhZp"
