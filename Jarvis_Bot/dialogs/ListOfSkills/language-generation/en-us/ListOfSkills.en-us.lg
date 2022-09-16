@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_vb9UpW()
+[Activity
+    Text = ${SendActivity_vb9UpW_text()}
+]
+
+# SendActivity_vb9UpW_text()
+- Still, not much but if you want me to add two numbers - I really think I can handle this with a bang!
+# SendActivity_4dMzpD()
+[Activity
+    Text = ${SendActivity_4dMzpD_text()}
+]
+
+# SendActivity_4dMzpD_text()
+- I can show  you.

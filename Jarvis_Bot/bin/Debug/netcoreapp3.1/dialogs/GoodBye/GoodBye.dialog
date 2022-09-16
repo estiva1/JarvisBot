@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "HRcEbK",
+    "name": "GoodBye",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "qOrWjP"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "b6YuvR"
+          },
+          "activity": "${SendActivity_b6YuvR()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GoodBye.lg",
+  "recognizer": "GoodBye.lu.qna",
+  "id": "GoodBye"
+}

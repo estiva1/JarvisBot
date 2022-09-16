@@ -1,0 +1,14 @@
+[import](common.lg)
+
+# SendActivity_Q7ZZiJ()
+[Activity
+    Text = ${SendActivity_Q7ZZiJ_text()}
+]
+
+# SendActivity_Q7ZZiJ_text()
+- ```Here it is:
+
+01 | Show me that commands | Help
+02 | What can you do?
+03 | Let's play
+04 | Bye!```

@@ -1,0 +1,62 @@
+[import](common.lg)
+
+# SendActivity_oYaMHI()
+[Activity
+    Text = ${SendActivity_oYaMHI_text()}
+]
+
+# SendActivity_oYaMHI_text()
+- Alright!
+- Super!
+- Here we go!
+- Awesome!
+- Let's rock!
+# NumberInput_Prompt_z2KeJM()
+[Activity
+    Text = ${NumberInput_Prompt_z2KeJM_text()}
+]
+
+# NumberInput_Prompt_z2KeJM_text()
+- Tell me the first number, please.
+# NumberInput_Prompt_BNGBvf()
+[Activity
+    Text = ${NumberInput_Prompt_BNGBvf_text()}
+]
+
+# NumberInput_Prompt_BNGBvf_text()
+- Ok, nice! Now tell me your second number.
+# SendActivity_JI9NVH()
+[Activity
+    Text = ${SendActivity_JI9NVH_text()}
+]
+
+# SendActivity_JI9NVH_text()
+- ```So, the numbers are:
+${user.firstNumber}
+${user.secondNumber}
+
+And the result is ${add(user.firstNumber, user.secondNumber)}```
+# SendActivity_eLHD7T()
+[Activity
+    Text = ${SendActivity_eLHD7T_text()}
+]
+
+# SendActivity_eLHD7T_text()
+- Am I right? Of course I right!)
+- Hocus pocus!
+- This is why I was built!
+- I'm a tornado of mathematic!
+# ConfirmInput_Prompt_eLGUdr()
+[Activity
+    Text = ${ConfirmInput_Prompt_eLGUdr_text()}
+]
+
+# ConfirmInput_Prompt_eLGUdr_text()
+- Want to play one more time?
+# SendActivity_VMjhZp()
+[Activity
+    Text = ${SendActivity_VMjhZp_text()}
+]
+
+# SendActivity_VMjhZp_text()
+- So quickly? I was just getting warmed up...

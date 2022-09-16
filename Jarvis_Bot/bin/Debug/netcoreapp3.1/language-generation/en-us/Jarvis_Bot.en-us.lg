@@ -1,0 +1,54 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Hi! I'm Jarvis Jr. and I'm a simple bot.
+# TextInput_Prompt_n15u6x()
+[Activity
+    Text = ${TextInput_Prompt_n15u6x_text()}
+]
+
+# TextInput_Prompt_n15u6x_text()
+- What's your name?
+# SendActivity_8TQb1o()
+[Activity
+    Text = ${SendActivity_8TQb1o_text()}
+]
+
+# SendActivity_8TQb1o_text()
+- Hello ${user.name}!
+# SendActivity_Dy9z3Q()
+[Activity
+    Text = ${SendActivity_Dy9z3Q_text()}
+]
+
+# SendActivity_Dy9z3Q_text()
+- ```You can ask me some questions or make me do something. You can use either number before the question (like 01, 02...) or question by itself. Here's the list of them:
+
+01 | Show me that commands
+02 | What can you do?
+03 | Let's play
+04 | Bye!```
+# TextInput_UnrecognizedPrompt_n15u6x()
+[Activity
+    Text = ${TextInput_UnrecognizedPrompt_n15u6x_text()}
+]
+
+# TextInput_UnrecognizedPrompt_n15u6x_text()
+- So strange name... Please, tell me your real one.
+- Sorry, but I need to know your real name, please.
+# SendActivity_akZBdh()
+[Activity
+    Text = ${SendActivity_akZBdh_text()}
+]
+
+# SendActivity_akZBdh_text()
+- Sorry, I'm not so smart yet)
+- Sorry, i didn't quite understand what you said...
+- Sorry, i din't get that...
+- Oops! I can't process your request.
+- Hmmm... I've never heard that before.

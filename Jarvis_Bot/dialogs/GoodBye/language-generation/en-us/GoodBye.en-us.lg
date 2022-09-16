@@ -1,0 +1,18 @@
+[import](common.lg)
+
+# SendActivity_b6YuvR()
+[Activity
+    Text = ${SendActivity_b6YuvR_text()}
+]
+
+# SendActivity_b6YuvR_text()
+- Bye!
+- Goodbye!
+- Bye for now!
+- See you!
+- Be seeing you!
+- I'm off.
+- Cheerio!
+- ```Shutting down system, sending report to FBI...
+
+Oh, c'mon, take it easy)) I'm not so intelligent)```

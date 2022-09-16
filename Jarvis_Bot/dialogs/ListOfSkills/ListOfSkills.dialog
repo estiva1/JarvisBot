@@ -1,0 +1,42 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "h4HffN",
+    "name": "ListOfSkills",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "9td18v"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vb9UpW"
+          },
+          "activity": "${SendActivity_vb9UpW()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "4dMzpD"
+          },
+          "activity": "${SendActivity_4dMzpD()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ListOfSkills.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "ListOfSkills"
+}

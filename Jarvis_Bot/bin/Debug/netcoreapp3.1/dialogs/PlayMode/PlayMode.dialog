@@ -1,0 +1,142 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ct9Y2Z",
+    "name": "PlayMode",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "zXME8o"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "oYaMHI"
+          },
+          "activity": "${SendActivity_oYaMHI()}"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "z2KeJM"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_z2KeJM()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.firstNumber"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "BNGBvf"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_BNGBvf()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.secondNumber"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "JI9NVH"
+          },
+          "activity": "${SendActivity_JI9NVH()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "eLHD7T"
+          },
+          "activity": "${SendActivity_eLHD7T()}"
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "aLqYFC"
+          },
+          "properties": [
+            "user.firstNumber",
+            "user.secondNumber"
+          ]
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "eLGUdr"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ConfirmInput_Prompt_eLGUdr()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineSeparator": ",",
+            "inlineOr": "or",
+            "inlineOrMore": ", or"
+          },
+          "style": "auto",
+          "property": "user.confirmed"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Mbtu7Z"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "65dNdf"
+              },
+              "property": "user.confirmed"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "fjaHgn"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "VMjhZp"
+              },
+              "activity": "${SendActivity_VMjhZp()}"
+            }
+          ],
+          "condition": "=user.confirmed"
+        }
+      ]
+    }
+  ],
+  "generator": "PlayMode.lg",
+  "recognizer": "PlayMode.lu.qna",
+  "id": "PlayMode"
+}

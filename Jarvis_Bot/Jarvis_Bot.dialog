@@ -1,0 +1,199 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "Jarvis_Bot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                },
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "n15u6x"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${TextInput_Prompt_n15u6x()}",
+                  "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_n15u6x()}",
+                  "property": "user.name",
+                  "validations": [
+                    "isMatch(this.value, '^[a-zA-Z]+$')"
+                  ],
+                  "defaultValue": "Pretty One"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8TQb1o"
+                  },
+                  "activity": "${SendActivity_8TQb1o()}"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Dy9z3Q"
+              },
+              "activity": "${SendActivity_Dy9z3Q()}"
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SsV1GN",
+        "name": "ListOfSkills"
+      },
+      "intent": "ListOfSkills",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NvINdK"
+          },
+          "activityProcessed": true,
+          "dialog": "ListOfSkills"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "1S2d32",
+        "name": "PlayMode"
+      },
+      "intent": "PlayMode",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "xyEc2b"
+          },
+          "activityProcessed": true,
+          "dialog": "PlayMode"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Ne5Kvq",
+        "name": "ListOfCommands"
+      },
+      "intent": "ListOfCommands",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "YbUk7M"
+          },
+          "activityProcessed": true,
+          "dialog": "ListOfCommands"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "vaiLdS",
+        "name": "Unknown intent"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "akZBdh"
+          },
+          "activity": "${SendActivity_akZBdh()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Ci7vW8",
+        "name": "Goodbye"
+      },
+      "intent": "Goodbye",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "13DR9B"
+          },
+          "activityProcessed": true,
+          "dialog": "GoodBye"
+        }
+      ]
+    }
+  ],
+  "generator": "Jarvis_Bot.lg",
+  "id": "Jarvis_Bot",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "ListOfSkills",
+        "pattern": "02|What can you do?"
+      },
+      {
+        "intent": "PlayMode",
+        "pattern": "03|Let's play"
+      },
+      {
+        "intent": "ListOfCommands",
+        "pattern": "01|Show me that commands|Help"
+      },
+      {
+        "intent": "TextInput_Response_n15u6x",
+        "pattern": ""
+      },
+      {
+        "intent": "Goodbye",
+        "pattern": "04|Bye|See ya!|Goodbye"
+      }
+    ]
+  }
+}
